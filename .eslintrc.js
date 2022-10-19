@@ -25,7 +25,7 @@ module.exports = {
   },
   parser: 'vue-eslint-parser',
   rules: {
-    'no-return-assign': 'off'
+    'import/prefer-default-export': 'off'
   },
   plugins: ['vue'],
   ignorePatterns: ['node_modules', 'assets', 'vite.config.ts']

@@ -1,35 +1,9 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-  import Header from '@components/Header/HeaderComponent/HeaderComponent.vue'
-  import TopBar from '@components/TopBar/TopBar.vue'
-  import Table from '@components/DataTable/TableComponent/TableComponent.vue'
-
-  const search = ref<string[]>(['', 'Name'])
-  const page = ref<number>(1)
-  const activeChar = ref<boolean>(true)
-  const handleSearchEvent = (searchText: string[]) => {
-    search.value = searchText
-  }
-  const handlePageEvent = (currentPage: number) => {
-    page.value = currentPage
-  }
-  const handleTabEvent = (isCharActive: boolean) => {
-    activeChar.value = isCharActive
-  }
+  import AdderComponent from '@components/AdderComponent/AdderComponent.vue'
 </script>
 
 <template>
-  <Header
-    @search="event => handleSearchEvent(event)"
-    @current-page="event => handlePageEvent(event)"
-  />
-  <TopBar @active-char="event => handleTabEvent(event)" />
-  <Table
-    :search="search[0]"
-    :options="search[1]"
-    :page="page"
-    :char-active="activeChar"
-  />
+  <AdderComponent />
 </template>
 
 <style lang="scss">
