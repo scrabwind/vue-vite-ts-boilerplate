@@ -13,7 +13,13 @@
 
 <script setup lang="ts">
   import { computed, ref } from 'vue'
-  import { add } from '@common/helpers/addition.utils'
+  import { add } from '@common/utils/addition.utils'
+  import { specificConst } from '@components/AdderComponent/adderComponent.const'
+  import type { SpecificConst } from '@components/AdderComponent/adderComponent.types'
+
+  const value: SpecificConst = specificConst.bar
+
+  console.log(value)
 
   const num1 = ref<number>(0)
   const num2 = ref<number>(0)
