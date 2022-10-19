@@ -1,9 +1,8 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_ELEMENTS_PER_PAGE: string
-  readonly VITE_API_PAGE_SIZE: string
-  readonly VITE_API_URL: string
+  readonly VITE_EXAMPLE_ENV: number
+  readonly VITE_FALSE: boolean
 }
 
 declare module '*.vue' {
