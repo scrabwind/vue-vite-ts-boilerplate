@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+exec >/dev/tty 2>&1
+
+echo '🏗️👷 Checking your code before commiting'
+
+# Run typescript compiler and lint to see if you accidentally broke something
+pnpm lint:staged ||
+(
+  echo '❌ Lint Staged failed';
+  false;
+)
+
+
+echo '✅ Commiting'
+

@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+exec >/dev/tty 2>&1
+
+echo '🏗️👷 Checking your code before pushing'
+
+if [[ `git status --porcelain` ]]; then
+    echo '❌ Please make sure your working directory is clean.';
+    false;
+else
+    # Run typescript compiler and lint to see if you accidentally broke something
+    pnpm vue-tsc --noEmit && pnpm lint && pnpm lint:style ||
+    (
+        echo '❌ TypeScript or Lint check failed.';
+        false;
+    )
+
+fi
+
+echo '✅ Pushing'
+
