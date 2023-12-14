@@ -8,9 +8,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint src/**/* --ext .ts,.vue --quiet",
-    "lint:style": "stylelint **/*.{scss,vue} --quiet",
-    "prepare": "husky install",
-    "lint:staged": "pnpm lint-staged --concurrent=false"
+    "lint:style": "stylelint **/*.{scss,vue} --quiet"
   },
   "dependencies": {
     "vue": "^3.3.11",
